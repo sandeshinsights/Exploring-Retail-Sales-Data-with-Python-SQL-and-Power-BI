@@ -1,136 +1,80 @@
-# Walmart_SQL_Python
+# Exploring Retail Sales Data with Python, SQL, and Power BI
 
-## Project Overview
+## Business Problem / Project Overview
 
-![Project Pipeline](https://github.com/najirh/Walmart_SQL_Python/blob/main/walmart_project-piplelines.png)
+This project analyzes sales data from a retail company to understand business performance and customer behavior. The dataset contains information about transactions, including branch locations, product categories, payment methods, sales amounts, customer ratings, and profit margins.
 
-
-This project is an end-to-end data analysis solution designed to extract critical business insights from Walmart sales data. We utilize Python for data processing and analysis, SQL for advanced querying, and structured problem-solving techniques to solve key business questions. The project is ideal for data analysts looking to develop skills in data manipulation, SQL querying, and data pipeline creation.
-
----
-
-## Project Steps
-
-### 1. Set Up the Environment
-   - **Tools Used**: Visual Studio Code (VS Code), Python, SQL (MySQL and PostgreSQL)
-   - **Goal**: Create a structured workspace within VS Code and organize project folders for smooth development and data handling.
-
-### 2. Set Up Kaggle API
-   - **API Setup**: Obtain your Kaggle API token from [Kaggle](https://www.kaggle.com/) by navigating to your profile settings and downloading the JSON file.
-   - **Configure Kaggle**: 
-      - Place the downloaded `kaggle.json` file in your local `.kaggle` folder.
-      - Use the command `kaggle datasets download -d <dataset-path>` to pull datasets directly into your project.
-
-### 3. Download Walmart Sales Data
-   - **Data Source**: Use the Kaggle API to download the Walmart sales datasets from Kaggle.
-   - **Dataset Link**: [Walmart Sales Dataset](https://www.kaggle.com/najir0123/walmart-10k-sales-datasets)
-   - **Storage**: Save the data in the `data/` folder for easy reference and access.
-
-### 4. Install Required Libraries and Load Data
-   - **Libraries**: Install necessary Python libraries using:
-     ```bash
-     pip install pandas numpy sqlalchemy mysql-connector-python psycopg2
-     ```
-   - **Loading Data**: Read the data into a Pandas DataFrame for initial analysis and transformations.
-
-### 5. Explore the Data
-   - **Goal**: Conduct an initial data exploration to understand data distribution, check column names, types, and identify potential issues.
-   - **Analysis**: Use functions like `.info()`, `.describe()`, and `.head()` to get a quick overview of the data structure and statistics.
-
-### 6. Data Cleaning
-   - **Remove Duplicates**: Identify and remove duplicate entries to avoid skewed results.
-   - **Handle Missing Values**: Drop rows or columns with missing values if they are insignificant; fill values where essential.
-   - **Fix Data Types**: Ensure all columns have consistent data types (e.g., dates as `datetime`, prices as `float`).
-   - **Currency Formatting**: Use `.replace()` to handle and format currency values for analysis.
-   - **Validation**: Check for any remaining inconsistencies and verify the cleaned data.
-
-### 7. Feature Engineering
-   - **Create New Columns**: Calculate the `Total Amount` for each transaction by multiplying `unit_price` by `quantity` and adding this as a new column.
-   - **Enhance Dataset**: Adding this calculated field will streamline further SQL analysis and aggregation tasks.
-
-### 8. Load Data into MySQL and PostgreSQL
-   - **Set Up Connections**: Connect to MySQL and PostgreSQL using `sqlalchemy` and load the cleaned data into each database.
-   - **Table Creation**: Set up tables in both MySQL and PostgreSQL using Python SQLAlchemy to automate table creation and data insertion.
-   - **Verification**: Run initial SQL queries to confirm that the data has been loaded accurately.
-
-### 9. SQL Analysis: Complex Queries and Business Problem Solving
-   - **Business Problem-Solving**: Write and execute complex SQL queries to answer critical business questions, such as:
-     - Revenue trends across branches and categories.
-     - Identifying best-selling product categories.
-     - Sales performance by time, city, and payment method.
-     - Analyzing peak sales periods and customer buying patterns.
-     - Profit margin analysis by branch and category.
-   - **Documentation**: Keep clear notes of each query's objective, approach, and results.
-
-### 10. Project Publishing and Documentation
-   - **Documentation**: Maintain well-structured documentation of the entire process in Markdown or a Jupyter Notebook.
-   - **Project Publishing**: Publish the completed project on GitHub or any other version control platform, including:
-     - The `README.md` file (this document).
-     - Jupyter Notebooks (if applicable).
-     - SQL query scripts.
-     - Data files (if possible) or steps to access them.
+The goal is to answer key business questions that help improve sales, increase customer satisfaction, and optimize operations. By analyzing this data, we provide useful insights for decision-makers to plan better marketing strategies, improve product offerings, and grow the business.
 
 ---
 
-## Requirements
+## Dataset Description
 
-- **Python 3.8+**
-- **SQL Databases**: MySQL, PostgreSQL
-- **Python Libraries**:
-  - `pandas`, `numpy`, `sqlalchemy`, `mysql-connector-python`, `psycopg2`
-- **Kaggle API Key** (for data downloading)
+The dataset includes the following columns:
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone <repo-url>
-   ```
-2. Install Python libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set up your Kaggle API, download the data, and follow the steps to load and analyze.
+- `invoice_id`: Unique transaction identifier  
+- `Branch`: Store branch where the sale happened  
+- `City`: City of the branch  
+- `category`: Product category  
+- `unit_price`: Price per unit  
+- `quantity`: Number of units sold  
+- `date`: Transaction date  
+- `time`: Transaction time  
+- `payment_method`: Method of payment used  
+- `rating`: Customer rating for the transaction  
+- `profit_margin`: Profit margin percentage  
+- `total`: Total sales amount for the transaction  
 
 ---
 
-## Project Structure
+## Key Business Questions
 
-```plaintext
-|-- data/                     # Raw data and transformed data
-|-- sql_queries/              # SQL scripts for analysis and queries
-|-- notebooks/                # Jupyter notebooks for Python analysis
-|-- README.md                 # Project documentation
-|-- requirements.txt          # List of required Python libraries
-|-- main.py                   # Main script for loading, cleaning, and processing data
-```
----
-
-## Results and Insights
-
-This section will include your analysis findings:
-- **Sales Insights**: Key categories, branches with highest sales, and preferred payment methods.
-- **Profitability**: Insights into the most profitable product categories and locations.
-- **Customer Behavior**: Trends in ratings, payment preferences, and peak shopping hours.
-
-## Future Enhancements
-
-Possible extensions to this project:
-- Integration with a dashboard tool (e.g., Power BI or Tableau) for interactive visualization.
-- Additional data sources to enhance analysis depth.
-- Automation of the data pipeline for real-time data ingestion and analysis.
+1. Which payment method is used the most?  
+2. How many transactions are done using each payment method?  
+3. Which branch has the highest total sales?  
+4. Which branch has the highest average customer rating?  
+5. Which product category has the highest total revenue?  
+6. Which category has the highest average profit margin?  
+7. At what time of day are most sales made?  
+8. Which day of the week has the highest sales?  
+9. What is the average rating for each product category?  
+10. Does buying a higher quantity affect customer ratings?  
+11. Which branches have total sales greater than the average sales of all branches?  
+12. Which categories have an average unit price higher than the overall average unit price?  
+13. Which payment methods have more transactions than the average number of transactions across all payment methods?  
+14. Which branch has the highest revenue?  
+15. Which product categories have a profit margin higher than the average profit margin across all products?  
 
 ---
 
-## License
+## Approach / Methods
 
-This project is licensed under the MIT License. 
+- Data preprocessing and cleaning were done using Python (Pandas).  
+- Exploratory Data Analysis and answering business questions were performed using SQL queries.  
+- Visualization of results will be done using Power BI (to be added soon).  
+
+---
+
+## Results / Insights
+
+*(To be added after analysis and visualization)*
 
 ---
 
-## Acknowledgments
+## How to Run
 
-- **Data Source**: Kaggle’s Walmart Sales Dataset
-- **Inspiration**: Walmart’s business case studies on sales and supply chain optimization.
+1. Preprocess the data using the provided Python scripts/notebooks.  
+2. Load the cleaned data into a SQL database (e.g., SQLite, PostgreSQL).  
+3. Run the SQL queries provided to answer the business questions.  
+4. Optionally, export query results for visualization in Power BI or Python.  
 
 ---
+
+## Power BI Visualizations
+
+*(This section will be updated with Power BI reports and dashboards in the next phase of the project.)*
+
+---
+
+
+
