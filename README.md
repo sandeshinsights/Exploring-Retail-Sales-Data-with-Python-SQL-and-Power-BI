@@ -31,7 +31,7 @@ The dataset includes the following columns:
 
 1. Which payment method is used the most?  
 2. How many transactions are done using each payment method?  
-3. Which branch has the highest total sales?  
+3. Which branch and city have the highest total sales?
 4. Which branch has the highest average customer rating?  
 5. Which product category has the highest total revenue?  
 6. Which category has the highest average profit margin?  
