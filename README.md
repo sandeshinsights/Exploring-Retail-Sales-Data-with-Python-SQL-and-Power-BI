@@ -69,6 +69,17 @@ The dataset includes the following columns:
 - Many branches such as WALM076, WALM034, and WALM010 achieved higher-than-average customer ratings, showing stronger customer satisfaction.
 ---
 
+
+### Key Suggestions
+- Focus more on credit card and e-wallet transactions as they are the most used payment methods.  
+- Plan offers or campaigns for mornings and evenings to balance out the lower sales compared to afternoons.  
+- Use Tuesday’s high sales trend for targeted promotions or discounts.  
+- Increase stock and marketing for high-performing categories like Fashion Accessories and Food & Beverages.  
+- Work on improving customer experience for lower-rated categories such as Home & Lifestyle.  
+- Encourage bulk purchases with discounts or loyalty points, as higher quantities have better ratings.  
+- Review strategies from high-performing branches like WALM009 in Plano and apply them to other branches.  
+
+
 ## How to Run
 
 1. Preprocess the data using the provided Python scripts/notebooks.  
