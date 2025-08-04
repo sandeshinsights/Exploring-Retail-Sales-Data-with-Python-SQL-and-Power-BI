@@ -57,8 +57,16 @@ The dataset includes the following columns:
 
 ## Results / Insights
 
-*(To be added after analysis and visualization)*
-
+- Credit cards are the most preferred payment method with 4,256 transactions, followed by e-wallets with 3,881.  
+- Branch WALM009 in Plano recorded the highest total sales at 25,688.34, while Branch WALM004 had the highest average customer rating (7.00).  
+- Fashion accessories generated the highest total revenue (around 489,481), while Food and beverages had the highest average profit margin (around 0.40).  
+- Most sales occur in the afternoon (12 PM – 6 PM) with 4,636 transactions.  
+- Tuesday generated the highest total sales (around 184,201).  
+- Food and beverages received the highest customer ratings (around 7.11), while Home and lifestyle had the lowest (around 5.74).  
+- Orders with higher quantities have significantly higher average ratings (6.94) compared to low-quantity purchases (5.77).  
+- Several branches such as WALM009, WALM074, and WALM030 achieved total sales higher than the average sales of all branches.  
+- Electronic accessories and Food & Beverages categories had average unit prices higher than the overall average.  
+- Many branches such as WALM076, WALM034, and WALM010 achieved higher-than-average customer ratings, showing stronger customer satisfaction.
 ---
 
 ## How to Run
